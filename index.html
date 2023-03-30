@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rollenspiel zur komplexen Problemlösung</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			font-size: 2em;
+			margin-top: 1em;
+		}
+		h2 {
+			font-size: 1.5em;
+			margin-top: 1.5em;
+		}
+		button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 16px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin-top: 1em;
+			cursor: pointer;
+		}
+		.role-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 2em;
+		}
+		.role {
+			font-size: 3em;
+			font-weight: bold;
+			margin-bottom: 0.5em;
+		}
+		.role-description {
+			font-size: 1em;
+			margin-bottom: 1em;
+		}
+	</style>
+</head>
+<body>
+	<h1>Rollenspiel zur komplexen Problemlösung</h1>
+	<p>Klicke auf den Button, um eine neue Rolle angezeigt zu bekommen:</p>
+	<button id="newRoleBtn">Neue Rolle</button>
+	<div id="roleOutput" class="role-container"></div>
+
+	<script>
+		const roles = [
+			{ name: "Kind", description: "Deine Stärke ist, Fragen zu stellen und aus einer fragenden Perspektive komplexe Probleme zu betrachten." },
+			{ name: "Fotograf*in", description: "Deine Stärke ist, Inhalte aus unterschiedlichen Perspektiven zu betrachten. Du kannst auch rein- und rauszoomen." },
+			{ name: "Forscher*in", description: "Deine Stärke ist, gründlich zu analysieren und Fakten zu sammeln." },
+			{ name: "Künstler*in", description: "Deine Stärke ist, Inhalte ästhetisch und emotional darzustellen, um neue Einsichten zu schaffen." },
+			{ name: "Ingenieur*in", description: "Deine Stärke ist, Inhalte auf ihre einzelnen Komponenten zu analysieren." },
+			{ name: "Sozialarbeiterin", description: "Deine Stärke ist, komplexe Probleme im Zusammenhang mit menschlichem Verhalten und sozialen Strukturen zu verstehen." },
+			{ name: "Journalist*in", description: "Deine Stärke ist, Inhalte aus verschiedenen Blickwinkeln zu betrachten und diese verständlich und anschaulich darzustellen." },
+{ name: "Historiker*in", description: "Deine Stärke ist, Inhalte im historischen Kontext zu betrachten und daraus Erkenntnisse für die Gegenwart und Zukunft zu gewinnen." },
+{ name: "Wissenschaftler*in", description: "Deine Stärke ist, systematisch zu erforschen und durch wissenschaftliche Methoden Lösungen zu finden." },
+{ name: "Detektiv*in", description: "Deine Stärke ist, alle verfügbaren Hinweise und Beweise zu berücksichtigen." },
+{ name: "Science-Fiction-Autor*in", description: "Deine Stärke ist, Inhalte aus einer fiktiven und zukunftsorientierten Perspektive zu betrachten und dadurch neue Lösungsansätze zu finden." },
+{ name: "Spieleentwickler*in", description: "Deine Stärke ist, Inhalte spielerisch zu betrachten und so neue Einsichten und Lösungen zu gewinnen." },
+{ name: "Stand-up-Comedian", description: "Deine Stärke ist, Inhalte humorvoll und satirisch zu betrachten, um dadurch neue Perspektiven zu gewinnen." },
+{ name: "Superheld*in", description: "Deine Stärke ist, durch ungewöhnliche Methoden und Fähigkeiten Lösungen zu finden." },
+{ name: "Entdecker*in", description: "Deine Stärke ist, durch Entdeckungsreisen und Abenteuerlust neue Horizonte zu eröffnen." },
+{ name: "Magier*in", description: "Deine Stärke ist, durch ungewöhnliche Methoden und Tricks Lösungen zu finden." },
+{ name: "Gärtner*in", description: "Deine Stärke ist, auf die Nachhaltigkeit zu achten und offenes Wachstum zu fördern." },
+{ name: "Älterer Mensch", description: "Deine Stärke ist, Wissen und Erfahrung einzubringen." },
+{ name: "Optimist*in", description: "Deine Stärke ist, Inhalte positiv und lösungsorientiert zu betrachten und dadurch neue Chancen und Möglichkeiten zu sehen." },
+{ name: "Pessimist*in", description: "Deine Stärke ist, Inhalte kritisch und realistisch zu betrachten und dabei mögliche Risiken und Schwierigkeiten zu berücksichtigen." }
+];
+
+	const newRoleBtn = document.getElementById("newRoleBtn");
+	const roleOutput = document.getElementById("roleOutput");
+
+	function getRandomRole() {
+		return roles[Math.floor(Math.random() * roles.length)];
+	}
+
+	newRoleBtn.addEventListener("click", () => {
+		const role = getRandomRole();
+		roleOutput.innerHTML = `
+			<div class="role">${role.name}</div>
+			<div class="role-description">${role.description}</div>
+		`;
+	});
+</script>
+</body>
+</html>
